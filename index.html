@@ -507,6 +507,98 @@ body::before{
 .contact-section h2{
     font-family:"Zen Dots", sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
+
+/* 容器 */
+.scroll-down{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* 箭头本体 */
+.scroll-down span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 14px;
+    height: 14px;
+
+    border-right: 2px solid #00d9ff;
+    border-bottom: 2px solid #00d9ff;
+
+    transform: translateX(-50%) rotate(45deg);
+
+    animation: floatArrow 1.6s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 8px rgba(0,217,255,0.8));
+}
+
+/* 呼吸光背景 */
+.scroll-down::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0,217,255,0.25),
+        transparent 70%
+    );
+
+    animation: pulse 2s infinite;
+}
+
+/* 悬浮动画 */
+@keyframes floatArrow{
+    0%{
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+        opacity: 0.4;
+    }
+    50%{
+        transform: translateX(-50%) translateY(10px) rotate(45deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+        opacity: 0.4;
+    }
+}
+
+/* 光晕呼吸 */
+@keyframes pulse{
+    0%,100%{
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+    50%{
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.6;
+    }
+}
+
+/* hover强化 */
+.scroll-down:hover span{
+    border-color: #ffffff;
+    filter: drop-shadow(0 0 12px rgba(0,217,255,1));
+    transform: translateX(-50%) translateY(6px) rotate(45deg);
+}
 </style>
 </head>
 
@@ -532,6 +624,9 @@ body::before{
     <h1>CELESNICA</h1>
 
     <p>composer · producer · sound designer</p>
+    <a href="#next" class="scroll-down">
+        <span></span>
+    </a>
 
 </section>
 
