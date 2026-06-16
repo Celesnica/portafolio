@@ -711,6 +711,41 @@ html{
         opacity: 0.6;
     }
 }
+/* =========================
+   PROJECTS 页面专属主题
+========================= */
+
+#projects .scroll-down span,
+#projects .scroll-up span{
+    border-color: #8B3A2E; /* 红褐色 */
+    filter: drop-shadow(0 0 8px rgba(139,58,46,0.8));
+}
+
+/* 光晕 */
+#projects .scroll-down::after,
+#projects .scroll-up::after{
+    background: radial-gradient(
+        circle,
+        rgba(139,58,46,0.25),
+        transparent 70%
+    );
+}
+
+/* hover 变白（保持统一交互） */
+#projects .scroll-down:hover span,
+#projects .scroll-up:hover span{
+    border-color: #ffffff;
+    filter: drop-shadow(0 0 14px rgba(255,255,255,1));
+}
+
+#projects .scroll-down:hover::after,
+#projects .scroll-up:hover::after{
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.3),
+        transparent 70%
+    );
+}
 </style>
 </head>
 <script>
