@@ -1194,36 +1194,29 @@ window.addEventListener("scroll", function(){
 </div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.topology.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@latest/dist/vanta.waves.min.js"></script>
 
 <script>
+VANTA.WAVES({
+  el: "#your-element-selector",
 
-window.addEventListener("load", ()=>{
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
 
-  VANTA.TOPOLOGY({
+  minHeight: 200,
+  minWidth: 200,
 
-    el: "#contact",
+  scale: 0.8,
+  scaleMobile: 0.8,
 
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-
-    minHeight: 200.00,
-    minWidth: 200.00,
-
-    scale: 0.80,
-    scaleMobile: 1.00,
-
-    color: 0x7fdfff,           // 冰蓝线条
-
-    backgroundColor: 0x030914 // 深海蓝背景
-
-  })
-
+  color: 0x0b2a3a,        // 深蓝偏青（主体波浪）
+  shininess: 35,          // 高光（别太高）
+  waveHeight: 12,         // 波浪高度（越低越稳）
+  waveSpeed: 0.6,         // 速度（建议偏慢）
+  zoom: 0.9               // 轻微空间感
 })
-
 </script>
     
 </section>
