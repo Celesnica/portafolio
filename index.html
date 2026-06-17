@@ -927,6 +927,47 @@ html{
     position: relative;
     overflow: hidden;
 }
+#contact{
+    position: relative;
+    overflow: hidden;
+}
+
+/* 柔和上下渐暗 */
+
+#contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+
+        rgba(0,0,0,0.82) 0%,      /* 顶部暗 */
+
+        rgba(0,0,0,0.45) 12%,
+
+        rgba(0,0,0,0.12) 28%,
+
+        transparent 42%,
+
+        transparent 58%,
+
+        rgba(0,0,0,0.12) 72%,
+
+        rgba(0,0,0,0.45) 88%,
+
+        rgba(0,0,0,0.82) 100%
+    );
+
+    pointer-events:none;
+
+    z-index:1;
+}
 
 </style>
 </head>
