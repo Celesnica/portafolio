@@ -877,6 +877,12 @@ html{
 
     transition: opacity 0.15s ease;
 }
+
+#contact{
+    position: relative;
+    overflow: hidden;
+}
+
 </style>
 </head>
 
@@ -1095,7 +1101,42 @@ window.addEventListener("scroll", function(){
 </div>
 
 </div>
+<script src="three.r134.min.js"></script>
+<script src="vanta.net.min.js"></script>
 
+<script src="three.r134.min.js"></script>
+<script src="vanta.net.min.js"></script>
+
+<script>
+
+VANTA.NET({
+
+  el: "#contact",
+
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+
+  minHeight: 200.00,
+  minWidth: 200.00,
+
+  scale: 1.00,
+  scaleMobile: 1.00,
+
+  color: 0xffffff,
+
+  backgroundColor: 0x000000,
+
+  spacing: 24.00,
+
+  points: 7.00,
+
+  maxDistance: 18.00
+
+})
+
+</script>
+    
 </section>
 
 <script>
