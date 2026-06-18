@@ -1060,19 +1060,6 @@ footer {
 </style>
 </head>
 
-<script>
-window.addEventListener("scroll", () => {
-    let winScroll = document.documentElement.scrollTop;
-    let height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-
-    let scrolled = (winScroll / height) * 100;
-
-    document.getElementById("progress-bar").style.width =
-      scrolled + "%";
-});
-</script>
 
 <script>
 window.addEventListener("scroll", () => {
@@ -1184,6 +1171,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+    let winScroll = document.documentElement.scrollTop;
+    let height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    let scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progress-bar").style.width =
+      scrolled + "%";
 });
 </script>
 
