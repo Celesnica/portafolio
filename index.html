@@ -45,8 +45,10 @@
 
 /* 按钮区域 */
 .enter-box {
-  text-align: center;
-  color: white;
+      text-align: center;
+      color: white;
+      transition: opacity 0.8s ease;
+      will-change: opacity;
 }
 
 #enterBtn {
@@ -81,8 +83,6 @@
   align-items: center;
 
   z-index: 9999;
-
-  transition: opacity 1.5s ease;
 }
 #main {
   filter: blur(10px);
@@ -1139,38 +1139,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("home");
     const music = document.getElementById("bgMusic");
 
-    btn.addEventListener("click", () => {
+btn.addEventListener("click", () => {
 
-        // 去模糊
-        main.style.filter = "blur(0px)";
+    const box = document.querySelector(".enter-box");
 
-        // welcome 淡出
-        preloader.style.opacity = "0";
+    // 主页去模糊
+    main.style.filter = "blur(0px)";
 
-        // 音乐播放 + 渐入
-        music.volume = 0;
-        music.play();
+    // 只让文字和按钮淡出
+    box.style.opacity = "0";
 
-        let volume = 0;
-        const fade = setInterval(() => {
+    // 音乐播放
+    music.volume = 0;
+    music.play();
 
-            volume += 0.01;
+    let volume = 0;
 
-            if (volume >= 0.8) {
-                volume = 0.8;
-                clearInterval(fade);
-            }
+    const fade = setInterval(() => {
 
-            music.volume = volume;
+        volume += 0.01;
 
-        }, 150);
+        if(volume >= 0.8){
+            volume = 0.8;
+            clearInterval(fade);
+        }
 
-        // 删除 welcome
-        setTimeout(() => {
-            preloader.style.display = "none";
-        }, 1500);
+        music.volume = volume;
 
-    });
+    },150);
+
+    // 直接删除整个遮罩（不渐隐）
+    setTimeout(() => {
+
+        preloader.style.display = "none";
+
+    },800);
+
+});
 
 });
 </script>
